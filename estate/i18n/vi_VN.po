@@ -1,0 +1,477 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* estate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-02 05:54+0000\n"
+"PO-Revision-Date: 2025-04-02 05:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_kanban
+msgid ""
+"<br/>\n"
+"                            Expected Price:"
+msgstr ""
+"<br/>\n"
+"                            Giá dự kiến:"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+msgid "<span class=\"o_stat_text\"> Offers</span>"
+msgstr "<span class=\"o_stat_text\"> Đề nghị</span>"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property_offer__status__accepted
+msgid "Accepted"
+msgstr "Đã chấp nhận"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__active
+msgid "Active"
+msgstr "Hoạt động"
+
+#. module: estate
+#: model:ir.ui.menu,name:estate.estate_property_menu_properties
+msgid "Advertisement"
+msgstr "Quảng cáo"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_search
+msgid "Available"
+msgstr "Có sẵn"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__date_availability
+msgid "Available from"
+msgstr "Có sẵn từ"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__bedrooms
+msgid "Bedrooms"
+msgstr "Phòng ngủ"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__best_offer
+msgid "Best Offer"
+msgstr "Đề nghị tốt nhất"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_kanban
+msgid "Best Offer:"
+msgstr "Đề nghị tốt nhất:"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__buyer
+msgid "Buyer"
+msgstr "Người mua"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Cancel"
+msgstr "Hủy bỏ"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__cancelled
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__color
+msgid "Color"
+msgstr "Màu sắc"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__create_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__create_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__create_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__create_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__create_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__create_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__create_date
+msgid "Created on"
+msgstr "Tạo vào ngày"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__date_deadline
+msgid "Date Deadline"
+msgstr "Hạn chót"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__description
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: estate
+#: model:ir.model.fields,help:estate.field_estate_property__garden_orientation
+msgid "Determine which orientation of the estate"
+msgstr "Xác định hướng của bất động sản"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__display_name
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__display_name
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__display_name
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__garden_orientation__east
+msgid "East"
+msgstr "Hướng Đông"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_search
+msgid "Estate Property"
+msgstr "Bất động sản"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__expected_price
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+msgid "Expected Price"
+msgstr "Giá dự kiến"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__facades
+msgid "Facades"
+msgstr "Mặt tiền"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__garage
+msgid "Garage"
+msgstr "Nhà để xe"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__garden
+msgid "Garden"
+msgstr "Vườn"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__garden_area
+msgid "Garden Area"
+msgstr "Diện tích vườn"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_search
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__id
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__id
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__id
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__write_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__write_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__write_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__write_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__write_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__write_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào ngày"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__living_area
+msgid "Living Area (sqm)"
+msgstr "Diện tích sử dụng (m²)"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__name
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__name
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__name
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_search
+msgid "Name"
+msgstr "Tên"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__new
+msgid "New"
+msgstr "Mới"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__garden_orientation__north
+msgid "North"
+msgstr "Hướng Bắc"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__offer_ids
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__offer_ids
+msgid "Offer"
+msgstr "Đề nghị"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__offer_accepted
+msgid "Offer Accepted"
+msgstr "Đề nghị được chấp nhận"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__offer_count
+msgid "Offer Count"
+msgstr "Số lượng đề nghị"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_offer_view_form
+msgid "Offer Form"
+msgstr "Biểu mẫu đề nghị"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__offer_received
+msgid "Offer Received"
+msgstr "Đã nhận đề nghị"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_offer_view_tree
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Offers"
+msgstr "Các đề nghị"
+
+#. module: estate
+#: model:ir.model,name:estate.model_estate_property_offer
+msgid "Offers of estate property"
+msgstr "Các đề nghị của bất động sản"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__garden_orientation
+msgid "Orientation"
+msgstr "Hướng"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Other Info"
+msgstr "Thông tin khác"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__partner_id
+msgid "Partner"
+msgstr "Đối tác"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__postcode
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_search
+msgid "Postcode"
+msgstr "Mã bưu điện"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__price
+msgid "Price"
+msgstr "Giá"
+
+#. module: estate
+#: model:ir.actions.act_window,name:estate.estate_property_action
+#: model:ir.ui.menu,name:estate.property_model_menu_action
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_tree
+#: model_terms:ir.ui.view,arch_db:estate.res_users_view_form
+msgid "Properties"
+msgstr "Bất động sản"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__property_id
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__property_ids
+#: model:ir.model.fields,field_description:estate.field_res_users__property_ids
+msgid "Property"
+msgstr "Bất động sản"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Property Form"
+msgstr "Biểu mẫu bất động sản"
+
+#. module: estate
+#: model:ir.actions.act_window,name:estate.estate_property_offer_action
+msgid "Property Offers"
+msgstr "Các đề nghị bất động sản"
+
+#. module: estate
+#: model:ir.actions.act_window,name:estate.estate_property_tag_action
+#: model:ir.ui.menu,name:estate.tag_model_menu_action
+msgid "Property Tags"
+msgstr "Thẻ bất động sản"
+
+#. module: estate
+#: model:ir.model.constraint,message:estate.constraint_estate_property_tag_unique_name_tag
+msgid "Property Tags must be unique."
+msgstr "Thẻ bất động sản phải là duy nhất."
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__property_type_id
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__property_type_id
+msgid "Property Type"
+msgstr "Loại bất động sản"
+
+#. module: estate
+#: model:ir.actions.act_window,name:estate.estate_property_type_action
+#: model:ir.ui.menu,name:estate.type_model_menu_action
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_tree
+msgid "Property Types"
+msgstr "Các loại bất động sản"
+
+#. module: estate
+#: model:ir.ui.menu,name:estate.estate_property_menu
+msgid "Real Estate"
+msgstr "Bất động sản"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property_offer__status__refused
+msgid "Refused"
+msgstr "Từ chối"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__seller
+msgid "Salesman"
+msgstr "Người bán"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__selling_price
+msgid "Selling Price"
+msgstr "Giá bán"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_kanban
+msgid "Selling Price:"
+msgstr "Giá bán:"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__sequence
+msgid "Sequence"
+msgstr "Thứ tự"
+
+#. module: estate
+#: model:ir.ui.menu,name:estate.estate_property_menu_settings
+msgid "Settings"
+msgstr "Cài đặt"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__sold
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Sold"
+msgstr "Đã bán"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__garden_orientation__south
+msgid "South"
+msgstr "Hướng Nam"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__state
+msgid "State"
+msgstr "Trạng thái"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__status
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__tag_ids
+msgid "Tag"
+msgstr "Thẻ"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_tag_view_tree
+msgid "Tags"
+msgstr "Các thẻ"
+
+#. module: estate
+#: model:ir.model,name:estate.model_estate_property_tag
+msgid "Tags of estate property"
+msgstr "Thẻ của bất động sản"
+
+#. module: estate
+#: model:ir.model.constraint,message:estate.constraint_estate_property_positive_expected_price
+msgid "The expected price must be positive."
+msgstr "Giá dự kiến phải là số dương."
+
+#. module: estate
+#: model:ir.model.constraint,message:estate.constraint_estate_property_offer_positive_offer_price
+msgid "The offer price must be positive."
+msgstr "Giá đề nghị phải là số dương."
+
+#. module: estate
+#: model:ir.model.constraint,message:estate.constraint_estate_property_positive_selling_price
+msgid "The selling price must be positive."
+msgstr "Giá bán phải là số dương."
+
+#. module: estate
+#. odoo-python
+#: code:addons/estate/models/estate_property.py:0
+#, python-format
+msgid "This option has cleared Garden Area and Orientation"
+msgstr "Mục Diện tích vườn và Hướng đã bị loại bỏ"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+msgid "Title"
+msgstr "Tiêu đề"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__total_area
+msgid "Total Area"
+msgstr "Tổng diện tích"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+msgid "Type Form"
+msgstr "Biểu mẫu loại bất động sản"
+
+#. module: estate
+#: model:ir.model.fields,help:estate.field_estate_property_type__sequence
+msgid "Used to order Property types. Lower is better."
+msgstr "Dùng để sắp xếp các loại bất động sản. Giá trị thấp hơn sẽ được ưu tiên."
+
+#. module: estate
+#: model:ir.model,name:estate.model_res_users
+msgid "User"
+msgstr "Người dùng"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__validity
+msgid "Validity"
+msgstr "Hiệu lực"
+
+#. module: estate
+#. odoo-python
+#: code:addons/estate/models/estate_property.py:0
+#, python-format
+msgid "Warning"
+msgstr "Cảnh báo"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__garden_orientation__west
+msgid "West"
+msgstr "Hướng Tây"
+
+#. module: estate
+#: model:ir.model,name:estate.model_estate_property
+msgid "list all the properties for estate"
+msgstr "liệt kê tất cả các bất động sản"
+
+#. module: estate
+#: model:ir.model,name:estate.model_estate_property_type
+msgid "type of estate property"
+msgstr "loại bất động sản"

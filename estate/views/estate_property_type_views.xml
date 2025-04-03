@@ -28,12 +28,12 @@
                     <notebook>
                         <page string="Properties">
                             <group>
-                                <field name="property_ids" string ="">
-                                    <list>
+                                <field name="property_ids" string="">
+                                    <tree>
                                         <field name="name" string="Title"/>
-                                        <field name="expected_price"/>
+                                        <field name="expected_price" string="Expected Price"/>
                                         <field name="state" string="Status"/>
-                                     </list>
+                                    </tree>
                                 </field>
                             </group>   
                         </page>
@@ -48,11 +48,11 @@
         <field name="name">estate.property.type.view.tree</field>
         <field name="model">estate.property.type</field>
         <field name="arch" type="xml">
-            <list string="Property Types">
+            <tree string="Property Types">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="offer_count"/>
-            </list>
+            </tree>
         </field>
     </record>
 

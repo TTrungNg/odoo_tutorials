@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Tạo Module Category cho Real Estate -->
+    <record id="module_category_real_estate" model="ir.module.category">
+        <field name="name">Real Estate</field>
+        <field name="description">Manage real estate properties</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <!-- Tạo nhóm người dùng Real Estate User -->
+    <record id="group_estate_user" model="res.groups">
+        <field name="name">Real Estate User</field>
+        <field name="category_id" ref="module_category_real_estate"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Tạo nhóm người dùng Real Estate Manager -->
+    <record id="group_estate_manager" model="res.groups">
+        <field name="name">Real Estate Manager</field>
+        <field name="category_id" ref="module_category_real_estate"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Quy tắc: User chỉ có thể CRUD các bản ghi của chính họ -->
+    <record id="rule_estate_property_user_own" model="ir.rule">
+        <field name="name">Estate Property User Own Records</field>
+        <field name="model_id" ref="model_estate_property"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('estate.group_estate_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <!-- Quy tắc: User chỉ có thể Đọc các bản ghi của người khác -->
+    <record id="rule_estate_property_user_other" model="ir.rule">
+        <field name="name">Estate Property User Other Records</field>
+        <field name="model_id" ref="model_estate_property"/>
+        <field name="domain_force">[('create_uid', '!=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('estate.group_estate_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+</odoo>

@@ -5,8 +5,10 @@ class EstatePropertyOffer(models.Model):
     _name = "estate.property.offer"
     _description = "Offers of estate property"
     _order = "price desc"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    price = fields.Float()
+    price = fields.Float(track_visibility='onchange')
+    
     status = fields.Selection(
         copy = False,
         selection = [
@@ -14,7 +16,7 @@ class EstatePropertyOffer(models.Model):
             ('refused', 'Refused'),
         ]
     )
-    partner_id = fields.Many2one('res.partner', required = True, string = "Partner")
+    partner_id = fields.Many2one(comodel_name='res.partner', required = True, string = "Partner")
     property_id = fields.Many2one('estate.property', required = True)
     property_type_id = fields.Many2one(related="property_id.property_type_id", store=True)
 

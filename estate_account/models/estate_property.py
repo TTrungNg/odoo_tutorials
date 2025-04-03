@@ -26,3 +26,4 @@ class EstateProperty(models.Model):
         }
         empty_invoice = self.env['account.move'].create(invoice_vals)
         return super().action_sold()
+

@@ -1,4 +1,4 @@
-from odoo import api, fields, models, tools
+from odoo import api, fields, models, tools, _
 from odoo import exceptions
 from dateutil.relativedelta import relativedelta
 
@@ -7,8 +7,14 @@ class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "list all the properties for estate"
     _order = "id desc"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(required=True)
+    name = fields.Char(required=True, track_visibility='onchange')
+    offer_messageIds = fields.Many2many(
+        comodel_name="mail.message",
+        string="Offer Messages",
+        compute="_compute_offer_message_ids",
+    )
     active = fields.Boolean(string='Active', default=True)
     state = fields.Selection(
         required=True,
@@ -23,10 +29,10 @@ class EstateProperty(models.Model):
         ]
     )
     description = fields.Text()
-    offer_ids = fields.One2many('estate.property.offer', 'property_id')
+    offer_ids = fields.One2many('estate.property.offer', 'property_id', track_visibility='onchange')
     property_type_id = fields.Many2one("estate.property.type", string = "Property Type")
     buyer = fields.Many2one("res.partner", copy=False)
-    seller = fields.Many2one("res.users", string = "Salesman", index = True, tracking = True, default = lambda self: self.env.user)
+    seller = fields.Many2one("res.users", string = "Salesman", index = True, default = lambda self: self.env.user)
     tag_ids = fields.Many2many("estate.property.tag")
     postcode = fields.Char()
     date_availability = fields.Date(copy=False, default = fields.Date.today() + relativedelta(months=3), string="Available from")
@@ -62,6 +68,19 @@ class EstateProperty(models.Model):
     def _compute_best_offer(self):
         for property in self:
             property.best_offer = max(property.offer_ids.mapped('price'), default=0)
+
+    @api.depends("offer_ids.price")
+    def _compute_offer_message_ids(self):
+        for property in self:
+       
+            all_message_ids = self.env["mail.message"]
+            for offer in property.offer_ids:
+                all_message_ids += offer.message_ids
+            
+            property.offer_messageIds = all_message_ids
+            print("sau day la offer message")
+            print(property.offer_messageIds)
+
     
     @api.onchange("garden")
     def _onchang_garden(self):
@@ -72,8 +91,8 @@ class EstateProperty(models.Model):
             self.garden_area = 0
             self.garden_orientation = False
             return {'warning': {
-                'title': ("Warning"),
-                'message': ('This option has cleared Garden Area and Orientation')}}
+                'title': _("Warning"),
+                'message': _('This option has cleared Garden Area and Orientation')}}
         
     @api.constrains('expected_price', 'selling_price')
     def _check_selling_vs_expected_price(self):

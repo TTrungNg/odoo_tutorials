@@ -9,5 +9,6 @@
     'data': [
         
         
-    ]
+    ],
+    'license': 'LGPL-3',
 }
