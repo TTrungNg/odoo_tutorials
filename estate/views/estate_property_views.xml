@@ -8,6 +8,28 @@
         <field name="context">{'search_default_active': True, 'default_group_by': 'property_type_id'}</field>
     </record>
 
+    <record id="estate_property_offer_tree" model="ir.ui.view">
+        <field name="name">estate.property.offer.tree</field>
+        <field name="model">estate.property.offer</field>
+        <field name="arch" type="xml">
+            <tree string="Offers">
+                <field name="message_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="estate_property_offer_form" model="ir.ui.view">
+        <field name="name">estate.property.offer.form</field>
+        <field name="model">estate.property.offer</field>
+        <field name="arch" type="xml">
+            <form string="Offer">
+                <sheet>
+                    <field name="message_ids"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <!--  -->
 
     <record id="estate_property_view_tree" model="ir.ui.view">
@@ -17,7 +39,7 @@
             <tree string="Properties" decoration-muted="state=='sold'" decoration-success="state=='offer accepted'">
                 <field name="name"/>
                 <field name="postcode"/>
-                <field name="state" invisible="1"/> <!-- Add this field to resolve the error -->
+                <field name="state" invisible="1"/> 
                 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="bedrooms"/>
                 <field name="living_area"/>
@@ -73,10 +95,8 @@
                             </page>
                             <page string="Offers">
                                 <field name="offer_ids" 
-                                readonly="state=='offer accepted' or
-                                          state=='sold' or
-                                          state=='cancelled'"/>
-                
+                                readonly="state in ('offer accepted', 'sold', 'cancelled')"
+                                widget="one2many"/>
                                 
                             </page>
                             <page string="Other Info">
@@ -87,15 +107,18 @@
                                  
                                 </group>
                             </page>
+                        
                         </notebook>
-                    <field name="offer_messageIds"/>
-    
+                    
+                    <field name="offer_messageIds" widget="mail_thread"/>
                 </sheet>
+                
                 <div class="oe_chatter">
                     <field name="message_ids" widget="mail_thread"/>
                 </div>
                 
             </form>
+            
         </field>
     </record>
 

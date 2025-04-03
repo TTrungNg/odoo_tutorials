@@ -7,7 +7,7 @@ class EstatePropertyOffer(models.Model):
     _order = "price desc"
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    price = fields.Float(track_visibility='onchange')
+    price = fields.Float(tracking=True)
     
     status = fields.Selection(
         copy = False,
@@ -59,4 +59,9 @@ class EstatePropertyOffer(models.Model):
                 raise exceptions.UserError("You have to add a higher offer")
             property.state = "offer received"
         return super().create(vals_list)
+
+    # @api.onchange("price")
+    # def _onchange_price(self):
+    #     if self.property_id:
+    #         self.property_id._compute_offer_message_ids()
 

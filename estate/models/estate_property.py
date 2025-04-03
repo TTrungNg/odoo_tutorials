@@ -9,7 +9,7 @@ class EstateProperty(models.Model):
     _order = "id desc"
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(required=True, track_visibility='onchange')
+    name = fields.Char(required=True, tracking=True)
     offer_messageIds = fields.Many2many(
         comodel_name="mail.message",
         string="Offer Messages",
@@ -19,7 +19,7 @@ class EstateProperty(models.Model):
     state = fields.Selection(
         required=True,
         copy=False,
-        default=('new'),
+        default='new',
         selection=[
             ('new', 'New'), 
             ('offer received', 'Offer Received'),
@@ -29,7 +29,7 @@ class EstateProperty(models.Model):
         ]
     )
     description = fields.Text()
-    offer_ids = fields.One2many('estate.property.offer', 'property_id', track_visibility='onchange')
+    offer_ids = fields.One2many('estate.property.offer', 'property_id')
     property_type_id = fields.Many2one("estate.property.type", string = "Property Type")
     buyer = fields.Many2one("res.partner", copy=False)
     seller = fields.Many2one("res.users", string = "Salesman", index = True, default = lambda self: self.env.user)
@@ -56,7 +56,7 @@ class EstateProperty(models.Model):
          'The selling price must be positive.'),
     ]
 
-    total_area = fields.Integer(compute='_compute_total_area')
+    total_area = fields.Integer(compute='_compute_total_area', string="Total Area")
     best_offer = fields.Float(compute='_compute_best_offer')
 
     @api.depends("living_area", "garden_area")
@@ -69,21 +69,34 @@ class EstateProperty(models.Model):
         for property in self:
             property.best_offer = max(property.offer_ids.mapped('price'), default=0)
 
-    @api.depends("offer_ids.price")
+    # @api.depends("offer_ids.price")
+    # def _compute_offer_message_ids(self):
+    #     for property in self:
+       
+    #         all_message_ids = self.env["mail.message"]
+    #         for offer in property.offer_ids:
+    #             all_message_ids |= offer.message_ids
+            
+    #         property.offer_messageIds = all_message_ids
+            
+
+    # @api.depends("offer_ids.message_ids")
+    # def _compute_offer_message_ids(self):
+    #     for property in self:
+    #         offer_res_id = property.offer_ids.mapped('id') 
+    #         property.offer_messageIds = self.env["mail.message"].search([
+    #             ("res_id", "in", offer_res_id),
+    #             ("model", "=", "estate.property.offer")  
+    #         ])
+
+    @api.depends("offer_ids.message_ids")
     def _compute_offer_message_ids(self):
         for property in self:
-       
-            all_message_ids = self.env["mail.message"]
-            for offer in property.offer_ids:
-                all_message_ids += offer.message_ids
-            
-            property.offer_messageIds = all_message_ids
-            print("sau day la offer message")
-            print(property.offer_messageIds)
+            property.offer_messageIds = property.offer_ids.mapped('message_ids')  
 
-    
+
     @api.onchange("garden")
-    def _onchang_garden(self):
+    def _onchange_garden(self):
         if self.garden:
             self.garden_area = 10
             self.garden_orientation = "north"
@@ -121,7 +134,7 @@ class EstateProperty(models.Model):
     @api.ondelete(at_uninstall=False)
     def _unlink_if_property_new_canceled(self):
         for property in self:
-            if property.state not in ['new', 'canceled']:
+            if property.state not in ['new', 'cancelled']:
                 raise exceptions.UserError("Can only delete New or Canceled properties!")
 
 
